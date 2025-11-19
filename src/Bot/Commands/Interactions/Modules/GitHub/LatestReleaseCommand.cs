@@ -118,7 +118,8 @@ public partial class GitHubModule
             x.Name.ContainsIgnoreCase("linux_x64") && !x.Name.EndsWithIgnoreCase(".AppImage"));
         var linuxX64AppImage =
             assets.FirstOrDefault(x => x.Name.ContainsIgnoreCase("x64") && x.Name.EndsWithIgnoreCase(".AppImage"));
-        var macOs = assets.FirstOrDefault(x => x.Name.ContainsIgnoreCase("macos_universal"));
+        var macOsUniversal = assets.FirstOrDefault(x => x.Name.ContainsIgnoreCase("macos_universal"));
+        var macOsArm64 = assets.FirstOrDefault(x => x.Name.ContainsIgnoreCase("macos_arm64"));
         var linuxArm64 = assets.FirstOrDefault(x =>
             x.Name.ContainsIgnoreCase("linux_arm64") && !x.Name.EndsWithIgnoreCase(".AppImage"));
         var linuxArm64AppImage = assets.FirstOrDefault(x =>
@@ -132,7 +133,8 @@ public partial class GitHubModule
         
         applyArtifact(windowsX64, "Windows x64");
         applyArtifacts((linuxX64, linuxX64AppImage), "Linux x64");
-        applyArtifact(macOs, "macOS Universal");
+        applyArtifact(macOsUniversal, "macOS Universal");
+        applyArtifact(macOsArm64, "macOS (Apple Silicon only)");
         applyArtifacts((linuxArm64, linuxArm64AppImage), "Linux ARM64");
         applyArtifact(windowsArm64, "Windows ARM64");
         applyArtifact(androidApk, "Android APK");

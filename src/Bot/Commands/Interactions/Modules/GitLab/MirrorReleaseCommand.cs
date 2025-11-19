@@ -23,7 +23,7 @@ public partial class GitLabModule
         {
             if (!AuthorizedReleaseChannelAutocompleter.CanMirror(Context.User.Id, releaseChannel))
                 return BadRequest("You are not able to mirror releases from this GitHub repository.");
-            
+
             if (!TargetProjectAutocompleter.CanTarget(Context.User.Id, project))
                 return BadRequest("You are not able to perform operations on this GitLab project.");
 
