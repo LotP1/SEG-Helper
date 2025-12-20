@@ -35,7 +35,6 @@
         <PackageReference Include="NGitLab" Version="10.3.0" />
         <PackageReference Include="Octokit" Version="14.0.0" />
         <PackageReference Include="Qmmands" Version="5.0.2" />
-        <PackageReference Include="Ryujinx.Systems.Update.Common" Version="1.0.47" />
         <PackageReference Include="Ryujinx.UpdateClient" Version="1.0.47" />
         <PackageReference Include="Sentry" Version="5.15.0" />
         <PackageReference Include="Sep" Version="0.11.1" />
@@ -45,5 +44,6 @@
       <Folder Include="Commands\Text\Parsers\" />
       <Folder Include="Commands\Text\Results\" />
       <Folder Include="Resources\" />
+      <Folder Include="Services\GitLab\API\Helpers\" />
     </ItemGroup>
 </Project>

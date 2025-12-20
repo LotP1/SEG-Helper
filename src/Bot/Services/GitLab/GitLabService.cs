@@ -75,6 +75,21 @@ public class GitLabService : BotService
 
         return null;
     }
+
+    public void DeleteCanaryTag(string version)
+    {
+        Client
+            .GetRepository(_releaseChannels["canary"].Id)
+            .Tags
+            .Delete(version);
+            //not async for some ungodly reason
+    }
+
+    public Task<bool> DeleteCanaryPackageAsync(GitLabProjectPackageJsonResponse model)
+        => GitLabApi.DeletePackageAsync(_http, _releaseChannels["canary"].Id, model.Id);
+
+    public Task<GitLabProjectPackageJsonResponse> GetCanaryPackageAsync(string version)
+        => GitLabApi.FindMatchingPackageAsync(_http, _releaseChannels["canary"].Id, model => model.Name is "Ryubing-Canary" && model.Version == version);
     
     public Task<GitLabReleaseJsonResponse> GetLatestStableAsync()
     {
