@@ -97,13 +97,20 @@ public class RyujinxBotInteractionService : BotService
         if (!_commandsRegistered)
         {
             await _backing.AddModulesAsync(Assembly.GetExecutingAssembly(), _provider);
+            try
+            {
 #if DEBUG
-            await _backing.RegisterCommandsToGuildAsync(DiscordHelper.DevGuildId);
+                await _backing.RegisterCommandsToGuildAsync(DiscordHelper.DevGuildId);
 #else
             await Config.WhitelistGuilds
                 .ForEachAsync(id => _backing.RegisterCommandsToGuildAsync(id));
 #endif
-            
+            }
+            catch (Exception e)
+            {
+                Error(LogSource.Service, "Failed to register application commands:", e);
+            }
+
             _commandsRegistered = true;
         }
     }
