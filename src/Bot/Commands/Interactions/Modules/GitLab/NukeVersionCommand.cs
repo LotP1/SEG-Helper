@@ -5,27 +5,64 @@ namespace RyuBot.Commands.Interactions.Modules;
 public partial class GitLabModule
 {
     [SlashCommand("nuke-version",
-        "Nuke a Canary version from the GitLab, deleting its release, package registry assets, and tag.")]
+        "Nuke at least one Canary version(s) from the GitLab, deleting its release, package, and RC repo tag.")]
     [RequireBotOwnerPrecondition]
     public async Task<RuntimeResult> NukeVersionAsync(
-        [Summary("version", "The version to delete.")]
-        string version)
+        [Summary("version", "The version(s) to delete. If multiple, separate by a single space.")]
+        string versionFormat)
     {
         await DeferAsync(ephemeral: true);
 
-        version = version.Replace("Canary-", string.Empty);
-        try
-        {
-            GitLab.DeleteCanaryTag(version);
+        var versions = versionFormat.Split(' ', StringSplitOptions.RemoveEmptyEntries)
+            .Select(x => x.Replace("Canary-", string.Empty));
 
-            await GitLab.DeleteCanaryPackageAsync(await GitLab.GetCanaryPackageAsync(version));
-        }
-        catch (Exception e)
+        List<string> successfullyDeleted = [];
+        List<string> deletionFailed = [];
+
+        foreach (var version in versions)
         {
-            Error(e);
-            return BadRequest("Something went wrong. Check the logs for more detail.");
+            try
+            {
+                GitLab.DeleteCanaryTag(version);
+
+                if (await GitLab.GetCanaryPackageAsync(version).Then(GitLab.DeleteCanaryPackageAsync))
+                    successfullyDeleted.Add(version);
+                else
+                    deletionFailed.Add(version);
+            }
+            catch (Exception e)
+            {
+                Error(LogSource.Module, $"Failed to properly delete Canary v{version}", e);
+                deletionFailed.Add(version);
+            }
         }
 
-        return Ok($"Deleted Canary v{version}.");
+        return successfullyDeleted.Count switch
+        {
+            0 => BadRequest("Something went wrong. Check the logs for more detail."),
+            1 => Ok(String(sb =>
+            {
+                sb.Append("Deleted Canary v");
+                sb.Append(successfullyDeleted.First());
+                sb.Append('.').AppendLine().AppendLine();
+
+                if (deletionFailed.Count > 0)
+                {
+                    sb.AppendLine("Some versions failed to delete: ");
+                    sb.Append(deletionFailed.FormatCollection(x => Format.Code(x), prefix: "[", suffix: "]"));
+                }
+            })),
+            _ => Ok(String(sb =>
+            {
+                sb.AppendLine("Deleted the following canary versions: ");
+                sb.AppendLine(successfullyDeleted.FormatCollection(x => Format.Code(x), prefix: "[", suffix: "]"));
+
+                if (deletionFailed.Count > 0)
+                {
+                    sb.AppendLine("Some versions failed to delete: ");
+                    sb.Append(deletionFailed.FormatCollection(x => Format.Code(x), prefix: "[", suffix: "]"));
+                }
+            }))
+        };
     }
 }

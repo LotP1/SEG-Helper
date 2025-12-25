@@ -28,7 +28,7 @@ public static class GitLabApi
 
         return resp.StatusCode is HttpStatusCode.NoContent;
     }
-    
+
     public static Task<GitLabProjectPackageJsonResponse> FindMatchingPackageAsync(
         HttpClient httpClient, long projectId, 
         Func<GitLabProjectPackageJsonResponse, bool> matcher)
