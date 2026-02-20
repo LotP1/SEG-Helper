@@ -5,7 +5,7 @@
         </td>
         <td align="center" width="75%">
             
-# RyujinxHelper
+# SEG Helper
 
 A simple bot based on Volte.
 
