@@ -1,12 +1,12 @@
 ﻿using System.Globalization;
 using Avalonia.Data.Converters;
 using Avalonia.Media;
+using Bot.Entities;
 using Discord;
 using Gommon;
-using RyuBot.Entities;
 using Color = System.Drawing.Color;
 
-namespace RyuBot.UI.Converters;
+namespace Bot.UI.Converters;
 
 public class LogSeverityToBrush : DictionaryMappingBrushConverter<LogSeverityToBrush>
 {

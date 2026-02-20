@@ -1,0 +1,13 @@
+﻿<Solution>
+  <Configurations>
+    <Platform Name="Any CPU" />
+    <Platform Name="x64" />
+  </Configurations>
+  <Folder Name="/Solution Files/">
+    <File Path=".github\workflows\main.yml" />
+    <File Path="build.sh" />
+    <File Path="README.md" />
+  </Folder>
+  <Project Path="src/Bot/SEGBot.csproj" Type="C#" />
+  <Project Path="src/UI/SEGBot.UI.csproj" Type="C#" />
+</Solution>

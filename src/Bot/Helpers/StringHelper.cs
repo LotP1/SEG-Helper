@@ -1,4 +1,4 @@
-﻿namespace RyuBot.Helpers;
+﻿namespace Bot.Helpers;
 
 public static class StringHelper
 {

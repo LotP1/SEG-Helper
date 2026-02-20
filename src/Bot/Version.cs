@@ -2,7 +2,7 @@
 // ReSharper disable UnusedMember.Global
 // ReSharper disable MemberCanBePrivate.Global
 
-namespace RyuBot;
+namespace Bot;
 
 public static class Version
 {

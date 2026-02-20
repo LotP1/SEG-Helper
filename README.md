@@ -1,7 +1,7 @@
 <table>
     <tr>
         <td align="center" width="25%">
-            <img src="https://raw.githubusercontent.com/Ryubing/Assets/refs/heads/main/RyujinxApp_Rounded.png"/>
+            <img src="https://switch.lotp.it/SEG-Logo.png"/>
         </td>
         <td align="center" width="75%">
             
@@ -9,7 +9,7 @@
 
 A simple bot based on Volte.
 
-[![License](https://img.shields.io/github/license/Ryubing/RyujinxHelper.svg?color=7000FB&style=for-the-badge)](https://github.com/Ryubing/RyujinxHelper/blob/v4/LICENSE)
+[![License](https://img.shields.io/github/license/LotP1/SEG-Helper.svg?color=7000FB&style=for-the-badge)](https://github.com/LotP1/SEG-Helper/blob/main/LICENSE)
         </td>
     </tr>
 </table>

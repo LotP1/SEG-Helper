@@ -1,6 +1,6 @@
-﻿using RyuBot.Commands.Text;
+﻿using Bot.Commands.Text;
 
-namespace RyuBot.Entities;
+namespace Bot.Entities;
 
 public class MessageReceivedEventArgs
 {

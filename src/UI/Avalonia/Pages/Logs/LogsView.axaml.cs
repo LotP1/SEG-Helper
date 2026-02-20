@@ -1,10 +1,10 @@
 ﻿using Avalonia.Controls;
+using Bot.Helpers;
+using Bot.UI.Helpers;
 using CommunityToolkit.Mvvm.Input;
 using FluentAvalonia.UI.Controls;
-using RyuBot.Helpers;
-using RyuBot.UI.Helpers;
 
-namespace RyuBot.UI.Avalonia.Pages;
+namespace Bot.UI.Avalonia.Pages;
 
 [UiPage(PageType.Logs, "Bot Logs", Symbol.AllApps, isDefault: true, isFooter: true)]
 public partial class LogsView : UserControl

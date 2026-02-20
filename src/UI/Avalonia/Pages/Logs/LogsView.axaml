@@ -2,11 +2,11 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:local="using:RyuBot.UI.Avalonia.Pages"
+             xmlns:local="using:Bot.UI.Avalonia.Pages"
              xmlns:pi="using:Projektanker.Icons.Avalonia"
-             xmlns:converters="using:RyuBot.UI.Converters"
+             xmlns:converters="using:Bot.UI.Converters"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="RyuBot.UI.Avalonia.Pages.LogsView"
+             x:Class="Bot.UI.Avalonia.Pages.LogsView"
              x:DataType="local:LogsViewModel">
     <UserControl.DataContext>
         <local:LogsViewModel />

@@ -1,7 +1,7 @@
 using System.Text.RegularExpressions;
 using Qmmands;
 
-namespace RyuBot.Commands.Text;
+namespace Bot.Commands.Text;
 
 [InjectTypeParser]
 public partial class TimeSpanParser : ParameterUnawareTypeParser<TimeSpan>

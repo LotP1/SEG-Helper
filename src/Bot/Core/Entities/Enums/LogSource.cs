@@ -1,4 +1,4 @@
-namespace RyuBot.Entities;
+namespace Bot.Entities;
 
 public class LogSources
 {
@@ -35,7 +35,7 @@ public enum LogSource
     /// </summary>
     Gateway = 5,
     /// <summary>
-    ///     Indicates that this log message is from RyuBot itself.
+    ///     Indicates that this log message is from SEGBot itself.
     /// </summary>
     Bot = 6,
     /// <summary>

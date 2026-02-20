@@ -1,13 +1,13 @@
-﻿using CommunityToolkit.Mvvm.ComponentModel;
+﻿using Bot.Entities;
+using Bot.Helpers;
+using CommunityToolkit.Mvvm.ComponentModel;
 using Discord;
 using Gommon;
 using Humanizer;
-using RyuBot.Entities;
-using RyuBot.Helpers;
 
 // ReSharper disable MemberCanBePrivate.Global
 
-namespace RyuBot.UI.Helpers;
+namespace Bot.UI.Helpers;
 
 public partial class AppStatus : ObservableObject
 {

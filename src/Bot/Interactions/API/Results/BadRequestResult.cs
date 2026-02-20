@@ -1,6 +1,6 @@
 ﻿using Discord.Interactions;
 
-namespace RyuBot.Interactions.Results;
+namespace Bot.Interactions.Results;
 
 public class BadRequestResult<TInteraction> : BotResultBase where TInteraction : SocketInteraction
 {

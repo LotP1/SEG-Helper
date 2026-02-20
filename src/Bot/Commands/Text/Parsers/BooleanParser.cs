@@ -1,7 +1,7 @@
 ﻿using Qmmands;
-using RyuBot.Commands.Text;
+using Bot.Commands.Text;
 
-namespace RyuBot.Commands.Text;
+namespace Bot.Commands.Text;
 
 [InjectTypeParser(true)]
 public sealed class BooleanParser : ParameterUnawareTypeParser<bool>

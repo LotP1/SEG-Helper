@@ -1,11 +1,11 @@
 ﻿using Avalonia;
+using Bot.Helpers;
+using Bot.UI.Avalonia;
 using Projektanker.Icons.Avalonia;
 using Projektanker.Icons.Avalonia.FontAwesome;
-using RyuBot.Helpers;
-using RyuBot.UI.Avalonia;
-using Logger = RyuBot.Helpers.Logger;
+using Logger = Bot.Helpers.Logger;
 
-namespace RyuBot.UI;
+namespace Bot.UI;
 
 public class Program
 {
@@ -18,9 +18,9 @@ public class Program
         if (!UnixHelper.TryParseNamedArguments(args, out var output) && output.Error is not InvalidOperationException)
             Logger.Error(output.Error);
         
-        RyujinxBot.IsHeadless = args.Contains("--no-gui");
+        SEGBot.IsHeadless = args.Contains("--no-gui");
 
-        if (RyujinxBot.IsHeadless) 
+        if (SEGBot.IsHeadless) 
             return await BotManager.StartWait();
 
         await BotManager.LoginAsync();
@@ -33,7 +33,7 @@ public class Program
 
     // Avalonia configuration, don't remove; also used by visual designer.
     private static AppBuilder BuildAvaloniaApp()
-        => AppBuilder.Configure<RyujinxBotApp>()
+        => AppBuilder.Configure<SEGBotApp>()
             .UsePlatformDetect()
             .WithInterFont();
 }

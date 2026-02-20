@@ -6,7 +6,7 @@ using Discord.Interactions;
 using FluentAvalonia.UI.Controls;
 using Gommon;
 
-namespace RyuBot.UI.Helpers;
+namespace Bot.UI.Helpers;
 
 public partial class PageManager : ObservableObject
 {

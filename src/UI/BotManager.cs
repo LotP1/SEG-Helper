@@ -1,6 +1,6 @@
-﻿using RyuBot.Helpers;
+﻿using Bot.Helpers;
 
-namespace RyuBot.UI;
+namespace Bot.UI;
 
 public class BotManager
 {
@@ -10,28 +10,28 @@ public class BotManager
 
     public static async Task LoginAsync()
     {
-        if (RyujinxBot.Client is not null && Cts is not null) return;
+        if (SEGBot.Client is not null && Cts is not null) return;
 
         Cts = new();
         
-        await RyujinxBot.LoginAsync(Cts);
+        await SEGBot.LoginAsync(Cts);
     }
     
     public static async Task<int> StartWait()
     {
-        if (RyujinxBot.IsHeadless)
+        if (SEGBot.IsHeadless)
             Logger.OutputLogToStandardOut();
 
         Cts = new CancellationTokenSource();
 
-        _botTask = RyujinxBot.RunAsync(Cts);
+        _botTask = SEGBot.RunAsync(Cts);
         await _botTask;
         return 0;
     }
     
     public static void Stop()
     {
-        if (RyujinxBot.Client is null && Cts is null) return;
+        if (SEGBot.Client is null && Cts is null) return;
         
         Cts!.Cancel();
         _botTask = null;
@@ -40,7 +40,7 @@ public class BotManager
     }
     
     public static string GetConnectionState()
-        => RyujinxBot.Client is null
+        => SEGBot.Client is null
             ? "Disconnected"
-            : Enum.GetName(RyujinxBot.Client.ConnectionState) ?? "Disconnected";
+            : Enum.GetName(SEGBot.Client.ConnectionState) ?? "Disconnected";
 }

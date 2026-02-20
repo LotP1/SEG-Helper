@@ -1,7 +1,7 @@
 ﻿// ReSharper disable MemberCanBePrivate.Global
 
 
-namespace RyuBot.Helpers;
+namespace Bot.Helpers;
 
 using static IconVariant;
 

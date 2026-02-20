@@ -1,10 +1,11 @@
-using RyuBot.Interactions;
+using Bot.Entities;
+using Bot.Interactions;
 
-namespace RyuBot.Helpers;
+namespace Bot.Helpers;
 
 public static class DiscordHelper
 {
-    public static ulong DevGuildId = 1294443224030511104;
+    public static ulong DevGuildId = 1344396769630617600;
     
     public static string Zws => "\u200B";
 
@@ -96,7 +97,7 @@ public static class DiscordHelper
             var guilds = client.Guilds.Count;
 
             PrintHeader();
-            Info(LogSource.Bot, $"Currently running RyuBot V{Version.InformationVersion}.");
+            Info(LogSource.Bot, $"Currently running SEGBot V{Version.InformationVersion}.");
             Info(LogSource.Bot, "Use this URL to invite me to your guilds:");
             Info(LogSource.Bot, client.GetInviteUrl());
             Info(LogSource.Bot, $"Logged in as {client.CurrentUser.Username}#{client.CurrentUser.Discriminator}");
@@ -117,7 +118,7 @@ public static class DiscordHelper
                 }
             }
             
-            ExecuteBackgroundAsync(() => provider.Get<RyujinxBotInteractionService>().InitAsync());
+            ExecuteBackgroundAsync(() => provider.Get<SEGBotInteractionService>().InitAsync());
         };
     }
 

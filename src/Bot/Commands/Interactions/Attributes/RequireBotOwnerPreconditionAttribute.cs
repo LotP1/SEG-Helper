@@ -1,6 +1,6 @@
 ﻿using Discord.Interactions;
 
-namespace RyuBot.Commands.Interactions;
+namespace Bot.Commands.Interactions;
 
 public class RequireBotOwnerPreconditionAttribute : PreconditionAttribute
 {

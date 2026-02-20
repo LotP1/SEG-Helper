@@ -1,7 +1,7 @@
 ﻿using System.Text.Json.Serialization;
-using RyuBot.Entities;
+using Bot.Entities;
 
-namespace RyuBot;
+namespace Bot;
 
 public static class Config
 {
@@ -10,7 +10,7 @@ public static class Config
     public static readonly JsonSerializerOptions JsonOptions = CreateSerializerOptions(true);
     public static readonly JsonSerializerOptions MinifiedJsonOptions = CreateSerializerOptions(false);
 
-    public static readonly FilePath Path = FilePath.Data / "ryubot.json";
+    public static readonly FilePath Path = FilePath.Data / "segbot.json";
 
     private static JsonSerializerOptions CreateSerializerOptions(bool writeIndented)
         => new()
@@ -50,7 +50,6 @@ public static class Config
         _configuration = new TConfig
         {
             Token = "token here",
-            GitHubAppInstallationId = 0,
             SentryDsn = "",
             WhitelistGuilds = [
                 new(1294443224030511104, 1298451667863470120)
@@ -138,9 +137,7 @@ public static class Config
         => !(Token.IsNullOrEmpty() || Token.Equals("token here"));
 
     public static string Token => _configuration.Token;
-
-    public static long GitHubAppInstallationId => _configuration.GitHubAppInstallationId;
-
+    
     public static IEnumerable<ulong> WhitelistGuilds => _configuration
         .WhitelistGuilds
         .Select(x => x.GuildId);
@@ -151,8 +148,6 @@ public static class Config
             x => x.GuildId, 
             x => x.PirateRoleId
         );
-
-    public static GitLabAuth GitLabAuth => _configuration.GitLab;
 
     public static string SentryDsn => _configuration.SentryDsn;
 
@@ -175,18 +170,12 @@ public struct HeadlessBotConfig : IBotConfig
 {
     [JsonPropertyName("discord_token")]
     public string Token { get; set; }
-    
-    [JsonPropertyName("github_app_installation_id")]
-    public long GitHubAppInstallationId { get; set; } 
             
     [JsonPropertyName("sentry_dsn")]
     public string SentryDsn { get; set; }
     
     [JsonPropertyName("guild_info")]
     public GuildConfig[] WhitelistGuilds { get; set; }
-    
-    [JsonPropertyName("gitlab_info")]
-    public GitLabAuth GitLab { get; set; }
 
     [JsonPropertyName("bot_owner")]
     public ulong Owner { get; set; }
@@ -218,17 +207,11 @@ public interface IBotConfig
     [JsonPropertyName("discord_token")]
     public string Token { get; set; }
     
-    [JsonPropertyName("github_app_installation_id")]
-    public long GitHubAppInstallationId { get; set; } 
-    
     [JsonPropertyName("sentry_dsn")]
     public string SentryDsn { get; set; }
     
     [JsonPropertyName("guild_info")]
     public GuildConfig[] WhitelistGuilds { get; set; }
-    
-    [JsonPropertyName("gitlab_info")]
-    public GitLabAuth GitLab { get; set; }
     
     [JsonPropertyName("bot_owner")]
     public ulong Owner { get; set; }

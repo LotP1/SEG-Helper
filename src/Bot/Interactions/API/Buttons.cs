@@ -1,6 +1,6 @@
 ﻿// ReSharper disable MemberCanBePrivate.Global UnusedMember.Global
 
-namespace RyuBot.Interactions;
+namespace Bot.Interactions;
 
 public static class Buttons
 {

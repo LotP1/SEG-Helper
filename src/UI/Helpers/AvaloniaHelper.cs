@@ -2,12 +2,12 @@
 using Avalonia.Controls.ApplicationLifetimes;
 using Gommon;
 
-namespace RyuBot.UI.Helpers;
+namespace Bot.UI.Helpers;
 
 public static class AvaloniaHelper
 {
     public static string GetResource(string assetSubdir) 
-        => $"avares://RyuBot.UI/Assets/{assetSubdir}";
+        => $"avares://SEGBot.UI/Assets/{assetSubdir}";
     
     public static Uri GetResourceUri(string assetSubdir) => new(GetResource(assetSubdir));
     

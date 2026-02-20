@@ -1,6 +1,6 @@
 ﻿using System.Text.Json.Serialization;
 
-namespace RyuBot.Services;
+namespace Bot.Services;
 
 
 public class HashActionResponse

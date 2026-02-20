@@ -1,6 +1,7 @@
-﻿using Qmmands;
+﻿using Bot.Helpers;
+using Qmmands;
 
-namespace RyuBot.Commands.Text;
+namespace Bot.Commands.Text;
 
 [InjectTypeParser]
 public sealed class UnixParser : ParameterUnawareTypeParser<Dictionary<string, string>>

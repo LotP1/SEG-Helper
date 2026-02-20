@@ -1,4 +1,6 @@
-﻿namespace RyuBot.Entities;
+﻿using Bot.Helpers;
+
+namespace Bot.Entities;
 
 #nullable enable
 

@@ -1,16 +1,16 @@
 ﻿using System.Text.Json;
 using Avalonia.Controls.Notifications;
 using Avalonia.Platform.Storage;
+using Bot.Helpers;
+using Bot.Interactions;
+using Bot.Services;
 using Gommon;
 using MenuFactory.Abstractions.Attributes;
-using RyuBot.Helpers;
-using RyuBot.Interactions;
-using RyuBot.Services;
 
 // ReSharper disable UnusedMember.Global
 // These members are never directly invoked.
 
-namespace RyuBot.UI.Avalonia.Pages;
+namespace Bot.UI.Avalonia.Pages;
 
 // ReSharper disable once InconsistentNaming
 public class ShellViewMenu
@@ -18,10 +18,10 @@ public class ShellViewMenu
     [Menu("Clear Commands", "Dev", Icon = "fa-solid fa-broom")]
     public static async Task ClearCommands()
     {
-        var interactionService = RyujinxBot.Services.Get<RyujinxBotInteractionService>();
-        if (interactionService is null || RyujinxBot.Client is null)
+        var interactionService = SEGBot.Services.Get<SEGBotInteractionService>();
+        if (interactionService is null || SEGBot.Client is null)
         {
-            RyujinxBotApp.Notify("Not logged in", "State error", NotificationType.Error);
+            SEGBotApp.Notify("Not logged in", "State error", NotificationType.Error);
             return;
         }
 
@@ -37,33 +37,13 @@ public class ShellViewMenu
         var removedCommandsText = $"{removedCount} commands removed from {Config.WhitelistGuilds.Count()} guilds.";
 #endif
 
-        RyujinxBotApp.Notify(removedCommandsText, "Interaction commands cleared");
-    }
-
-    [Menu("Clean Compat List", "Dev", Icon = "fa-solid fa-broom")]
-    public static Task CleanCompatList()
-    {
-        var compatCsv = RyujinxBot.Services.Get<CompatibilityCsvService>()?.Csv;
-        if (compatCsv is null || RyujinxBot.Client is null)
-        {
-            RyujinxBotApp.Notify("Not logged in", "State error", NotificationType.Error);
-            return Task.CompletedTask;
-        }
-
-        var dt = DateTime.Now;
-        var fp = FilePath.Data / "compat" / $"clean-{dt.Year}-{dt.Month}-{dt.Day}-{dt.Ticks}.csv";
-        
-        compatCsv.Export(fp);
-        
-        RyujinxBotApp.Notify($"Exported cleaned CSV to {fp.Path}");
-
-        return Task.CompletedTask;
+        SEGBotApp.Notify(removedCommandsText, "Interaction commands cleared");
     }
 
     [Menu("Export TitleDB", "Dev", Icon = "fa-solid fa-file-export")]
     public static async Task ExportTitleDb()
     {
-        var pickedFile = await RyujinxBotApp.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
+        var pickedFile = await SEGBotApp.StorageProvider.OpenFilePickerAsync(new FilePickerOpenOptions
         {
             AllowMultiple = false,
             FileTypeFilter =
@@ -102,6 +82,6 @@ public class ShellViewMenu
                 $"{kvp.Value.Select(x => $"\"{x.ToLower()}\"").JoinToString(" or ")} => Playing(\"{kvp.Key}\"),"
             ));
         
-        RyujinxBotApp.Notify($"Exported TitleDB to {fp.Path}");
+        SEGBotApp.Notify($"Exported TitleDB to {fp.Path}");
     }
 }

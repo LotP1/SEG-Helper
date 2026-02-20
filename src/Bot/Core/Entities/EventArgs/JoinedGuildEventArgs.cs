@@ -1,4 +1,4 @@
-namespace RyuBot.Entities;
+namespace Bot.Entities;
 
 public sealed class JoinedGuildEventArgs : EventArgs
 {

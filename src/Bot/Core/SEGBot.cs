@@ -1,12 +1,12 @@
 using Qmmands;
 
-namespace RyuBot;
+namespace Bot;
 
-public class RyujinxBot
+public class SEGBot
 {
     public static Task StartAsync(Gommon.Optional<CancellationTokenSource> cts = default)
     {
-        Console.Title = $"RyuBot {Version.InformationVersion}";
+        Console.Title = $"SEGBot {Version.InformationVersion}";
         Console.CursorVisible = false;
         return RunAsync(cts);
     }
@@ -18,7 +18,7 @@ public class RyujinxBot
     public static DiscordSocketClient Client { get; private set; }
     public static CancellationTokenSource Cts { get; private set; }
 
-    public RyujinxBot()
+    public SEGBot()
         => Console.CancelKeyPress += (_, _) => Cts?.Cancel();
 
     public static async Task RunAsync(Gommon.Optional<CancellationTokenSource> cts = default)
@@ -84,9 +84,6 @@ public class RyujinxBot
         }
 
         Client.RegisterEventHandlers(Services);
-        
-        Services.Get<CompatibilityCsvService>().Init();
-        ExecuteBackgroundAsync(Services.Get<GitLabService>().InitAsync);
         
         sw.Stop();
 

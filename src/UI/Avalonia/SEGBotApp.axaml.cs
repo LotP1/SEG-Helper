@@ -10,17 +10,17 @@ using Avalonia.Media;
 using Avalonia.Markup.Xaml;
 using Avalonia.Platform.Storage;
 using Avalonia.Threading;
+using Bot.Entities;
+using Bot.UI.Avalonia.Pages;
+using Bot.UI.Helpers;
 using Gommon;
 using Humanizer;
 using MenuFactory;
 using MenuFactory.Abstractions;
-using RyuBot.Entities;
-using RyuBot.UI.Avalonia.Pages;
-using RyuBot.UI.Helpers;
 
-namespace RyuBot.UI.Avalonia;
+namespace Bot.UI.Avalonia;
 
-public class RyujinxBotApp : Application
+public class SEGBotApp : Application
 {
     private static WindowNotificationManager? _notificationManager;
 

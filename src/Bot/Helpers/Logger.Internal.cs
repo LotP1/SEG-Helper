@@ -1,9 +1,10 @@
-﻿using Colorful;
+﻿using Bot.Entities;
+using Colorful;
 using Sentry.Extensibility;
 
 using Color = System.Drawing.Color;
 
-namespace RyuBot.Helpers;
+namespace Bot.Helpers;
 
 public static partial class Logger
 {
@@ -23,7 +24,7 @@ public static partial class Logger
     }
 
     private static readonly string[] AsciiHeader =
-        new Figlet().ToAscii("RyuBot").ConcreteValue.Split("\n", StringSplitOptions.RemoveEmptyEntries);
+        new Figlet().ToAscii("SEGBot").ConcreteValue.Split("\n", StringSplitOptions.RemoveEmptyEntries);
         
     static Logger() => FilePath.Logs.Create();
         
@@ -31,7 +32,7 @@ public static partial class Logger
     
     internal static void PrintHeader()
     {
-        if (!RyujinxBot.IsHeadless) return;
+        if (!SEGBot.IsHeadless) return;
         
         Info(LogSource.Bot, Separator.Trim());
         AsciiHeader.ForEach(static ln => Info(LogSource.Bot, ln));

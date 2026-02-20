@@ -1,6 +1,7 @@
 ﻿using System.Collections.ObjectModel;
+using Bot.Helpers;
 
-namespace RyuBot;
+namespace Bot;
 
 public static class Program
 {
@@ -21,6 +22,6 @@ public static class Program
     public static async Task StartBotAsync(Dictionary<string, string> args = null)
     {
         CommandLineArguments = new (args ?? new Dictionary<string, string>());
-        await RyujinxBot.StartAsync();
+        await SEGBot.StartAsync();
     }
 }

@@ -1,8 +1,9 @@
-﻿using Discord.Interactions;
+﻿using Bot.Services;
+using Discord.Interactions;
 
-namespace RyuBot.Commands.Interactions.Modules;
+namespace Bot.Commands.Interactions.Modules;
 
-public partial class VerifierModule
+public partial class CommandModule
 {
     [SlashCommand("verify", "Verifies your modded Switch ownership via the Switch Verifier Homebrew.")]
     public async Task<RuntimeResult> VerifyAsync(

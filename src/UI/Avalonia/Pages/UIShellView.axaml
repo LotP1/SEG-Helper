@@ -4,13 +4,13 @@
                xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
                xmlns:fac="using:FluentAvalonia.UI.Controls"
                xmlns:faw="using:FluentAvalonia.UI.Windowing"
-               xmlns:v="using:RyuBot"
-               xmlns:local="using:RyuBot.UI.Avalonia.Pages"
-               xmlns:h="using:RyuBot.UI.Helpers"
+               xmlns:v="using:Bot"
+               xmlns:local="using:Bot.UI.Avalonia.Pages"
+               xmlns:h="using:Bot.UI.Helpers"
                xmlns:pi="using:Projektanker.Icons.Avalonia"
                mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="450"
-               x:Class="RyuBot.UI.Avalonia.Pages.UIShellView"
-               Title="RyuBot">
+               x:Class="Bot.UI.Avalonia.Pages.UIShellView"
+               Title="SEGBot">
     <faw:AppWindow.DataContext>
         <local:UIShellViewModel />
     </faw:AppWindow.DataContext>
@@ -44,7 +44,7 @@
                            IsSettingsVisible="False"
                            MenuItemsSource="{Binding Pages, Source={x:Static h:PageManager.Shared}}"
                            PaneDisplayMode="LeftCompact"
-                           PaneTitle="RyuBot"
+                           PaneTitle="SEGBot"
                            SelectedItem="{Binding Current, Mode=TwoWay, Source={x:Static h:PageManager.Shared}}">
             <fac:NavigationView.MenuItemTemplate>
                 <DataTemplate x:DataType="h:Page">

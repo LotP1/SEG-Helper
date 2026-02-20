@@ -13,20 +13,20 @@ dotnet publish -c release -r $1 --self-contained -p:PublishSingleFile=true -o ..
 
 function packClassic {
   if stringContain "win" $1; then
-    mv build/$1/classic/RyuBot.exe artifacts/RyuBot-$2_$1.exe
+    mv build/$1/classic/SEGBot.exe artifacts/SEGBot-$2_$1.exe
   else
-    mv build/$1/classic/RyuBot artifacts/RyuBot-$2_$1
+    mv build/$1/classic/SEGBot artifacts/SEGBot-$2_$1
   fi
 }
 
 function packUi {
   if stringContain "win" $1; then
     cd build/$1/ui
-    7z a ../../../artifacts/RyuBot.UI-$2_$1.7z ./
+    7z a ../../../artifacts/SEGBot.UI-$2_$1.7z ./
     cd ../../../
   else
     cd build/$1/ui
-    tar -czvf ../../../artifacts/RyuBot.UI-$2_$1.tar.gz ./
+    tar -czvf ../../../artifacts/SEGBot.UI-$2_$1.tar.gz ./
     cd ../../../
   fi
 }

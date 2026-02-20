@@ -8,17 +8,15 @@
         <RuntimeIdentifiers>linux-arm64</RuntimeIdentifiers>
         <Authors>GreemDev</Authors>
         <Company>Polyhaze</Company>
-        <PackageProjectUrl>https://github.com/Ryubing/RyujinxHelper</PackageProjectUrl>
-        <RepositoryUrl>https://github.com/Ryubing/RyujinxHelper</RepositoryUrl>
         <Copyright>MIT</Copyright>
         <Version>1.0.0.0</Version> <!-- actual version number -->
         <InformationalVersion>Dev Build</InformationalVersion> <!-- release/dev build --> 
         <Platforms>AnyCPU;x64</Platforms>
-        <ApplicationIcon>Resources/RyujinxBot.ico</ApplicationIcon>
+        <ApplicationIcon>Resources/SEGBot.ico</ApplicationIcon>
         <PlatformTarget>AnyCPU</PlatformTarget>
         <GenerateAssemblyInfo>true</GenerateAssemblyInfo>
         <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
-        <RootNamespace>RyuBot</RootNamespace>
+        <RootNamespace>SEGBot</RootNamespace>
     </PropertyGroup>
     <ItemGroup>
       <None Include="..\..\.editorconfig" Link=".editorconfig" />
@@ -35,15 +33,12 @@
         <PackageReference Include="NGitLab" Version="10.3.0" />
         <PackageReference Include="Octokit" Version="14.0.0" />
         <PackageReference Include="Qmmands" Version="5.0.2" />
-        <PackageReference Include="Ryujinx.UpdateClient" Version="1.0.47" />
         <PackageReference Include="Sentry" Version="5.15.0" />
         <PackageReference Include="Sep" Version="0.11.1" />
     </ItemGroup>
     <ItemGroup>
       <Folder Include="Commands\Interactions\" />
       <Folder Include="Commands\Text\Parsers\" />
-      <Folder Include="Commands\Text\Results\" />
       <Folder Include="Resources\" />
-      <Folder Include="Services\GitLab\API\Helpers\" />
     </ItemGroup>
 </Project>

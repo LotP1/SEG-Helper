@@ -1,4 +1,4 @@
-﻿namespace RyuBot.UI.Helpers;
+﻿namespace Bot.UI.Helpers;
 
 // ReSharper disable once InconsistentNaming
 public static class OS

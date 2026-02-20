@@ -1,4 +1,4 @@
-﻿namespace RyuBot.Interactions.Results;
+﻿namespace Bot.Interactions.Results;
 
 public class OkResult<TInteraction> : BotResultBase where TInteraction : SocketInteraction
 {

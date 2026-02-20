@@ -1,13 +1,13 @@
-﻿using Discord.Interactions;
-using RyuBot.Interactions.Results;
+﻿using Bot.Interactions.Results;
+using Discord.Interactions;
 
-namespace RyuBot.Interactions;
+namespace Bot.Interactions;
 
 [Obsolete("Use an inheritor of this class; not this class directly.")]
-public abstract class RyujinxBotModuleBase<TInteraction> : InteractionModuleBase<SocketInteractionContext<TInteraction>> 
+public abstract class SEGBotModuleBase<TInteraction> : InteractionModuleBase<SocketInteractionContext<TInteraction>> 
     where TInteraction : SocketInteraction
 {
-    public RyujinxBotInteractionService Interactions { get; set; }
+    public SEGBotInteractionService Interactions { get; set; }
     
     private bool DidDefer { get; set; }
 
@@ -49,9 +49,9 @@ public abstract class RyujinxBotModuleBase<TInteraction> : InteractionModuleBase
 }
 
 #pragma warning disable CS0618 // Type or member is obsolete
-public abstract class RyujinxBotSlashCommandModule : RyujinxBotModuleBase<SocketSlashCommand>;
-public abstract class RyujinxBotMessageCommandModule : RyujinxBotModuleBase<SocketMessageCommand>;
-public abstract class RyujinxBotUserCommandModule : RyujinxBotModuleBase<SocketUserCommand>;
-public abstract class RyujinxBotMessageComponentModule : RyujinxBotModuleBase<SocketMessageComponent>;
-public abstract class RyujinxBotModalModule : RyujinxBotModuleBase<SocketModal>;
+public abstract class SEGBotSlashCommandModule : SEGBotModuleBase<SocketSlashCommand>;
+public abstract class SEGBotMessageCommandModule : SEGBotModuleBase<SocketMessageCommand>;
+public abstract class SEGBotUserCommandModule : SEGBotModuleBase<SocketUserCommand>;
+public abstract class SEGBotMessageComponentModule : SEGBotModuleBase<SocketMessageComponent>;
+public abstract class SEGBotModalModule : SEGBotModuleBase<SocketModal>;
 #pragma warning restore CS0618 // Type or member is obsolete

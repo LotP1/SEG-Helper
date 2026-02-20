@@ -1,7 +1,7 @@
 ﻿using System.Globalization;
 using Qmmands;
 
-namespace RyuBot.Commands.Text;
+namespace Bot.Commands.Text;
 
 [InjectTypeParser]
 public sealed class ColorParser : ParameterUnawareTypeParser<Color>

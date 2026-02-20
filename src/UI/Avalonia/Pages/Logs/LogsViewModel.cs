@@ -1,15 +1,15 @@
 ﻿using System.Collections.ObjectModel;
 using Avalonia;
 using Avalonia.Threading;
+using Bot.Entities;
+using Bot.Helpers;
+using Bot.UI.Helpers;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using Discord;
 using Gommon;
-using RyuBot.Entities;
-using RyuBot.Helpers;
-using RyuBot.UI.Helpers;
 
-namespace RyuBot.UI.Avalonia.Pages;
+namespace Bot.UI.Avalonia.Pages;
 
 public partial class LogsViewModel : ObservableObject
 {
@@ -55,7 +55,7 @@ public partial class LogsViewModel : ObservableObject
 
             if (eventArgs.Error is not { } err) return;
 
-            RyujinxBotApp.NotifyError(err);
+            SEGBotApp.NotifyError(err);
             err.SentryCapture(scope =>
                 scope.AddBreadcrumb(
                     "This exception might not have been thrown, and may not be important; it is merely being logged.")

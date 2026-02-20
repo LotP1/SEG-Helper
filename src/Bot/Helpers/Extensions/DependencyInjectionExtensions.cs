@@ -1,9 +1,8 @@
 ﻿using System.Net.Http.Headers;
-using GitHubJwt;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Qmmands;
-using RyuBot;
-using Version = RyuBot.Version;
+using Bot;
+using Version = Bot.Version;
 
 namespace Gommon;
 
@@ -21,7 +20,7 @@ public static partial class Extensions
                     },
                     UserAgent =
                     {
-                        new ProductInfoHeaderValue("RyujinxHelper", Version.DotNetVersion.ToString())
+                        new ProductInfoHeaderValue("SEGHelper", Version.DotNetVersion.ToString())
                     },
                     CacheControl = new CacheControlHeaderValue
                     {
@@ -49,14 +48,6 @@ public static partial class Extensions
                 Separator = " ",
                 NullableNouns = null
             }))
-            .AddSingleton(new GitHubJwtFactory(
-                new FilePrivateKeySource("data/ryujinx-helper.pem"),
-                new GitHubJwtFactoryOptions
-                {
-                    AppIntegrationId = 1102327,
-                    ExpirationSeconds = 600
-                }
-            ))
             .Apply(_ =>
             {
                 if (!Config.SentryDsn.IsNullOrEmpty())

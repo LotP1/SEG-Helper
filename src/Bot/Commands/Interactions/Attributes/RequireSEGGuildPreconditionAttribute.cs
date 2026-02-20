@@ -1,8 +1,8 @@
 ﻿using Discord.Interactions;
 
-namespace RyuBot.Commands.Interactions;
+namespace Bot.Commands.Interactions;
 
-public class RequireRyubingGuildPreconditionAttribute : PreconditionAttribute
+public class RequireSEGGuildPreconditionAttribute : PreconditionAttribute
 {
     public override Task<PreconditionResult> CheckRequirementsAsync(
         IInteractionContext context,
@@ -13,9 +13,9 @@ public class RequireRyubingGuildPreconditionAttribute : PreconditionAttribute
             return Task.FromResult(PreconditionResult.FromError("This command must be run in a guild."));
 
         return Task.FromResult(
-            context.Guild.Id is not 1294443224030511104
+            context.Guild.Id is not 1344396769630617600
                 ? PreconditionResult.FromError(
-                    $"This command can only be run in {Format.Url("Ryubing", "https://discord.gg/ryujinx")}.")
+                    $"This command can only be run in Switch Emulation Group.")
                 : PreconditionResult.FromSuccess()
         );
     }

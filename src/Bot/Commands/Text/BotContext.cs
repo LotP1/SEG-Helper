@@ -1,6 +1,6 @@
 ﻿using Qmmands;
 
-namespace RyuBot.Commands.Text;
+namespace Bot.Commands.Text;
 
 public class BotContext : CommandContext
 {

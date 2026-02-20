@@ -1,5 +1,5 @@
 ﻿using Discord.Interactions;
-using RyuBot;
+using Bot;
 
 namespace Gommon;
 

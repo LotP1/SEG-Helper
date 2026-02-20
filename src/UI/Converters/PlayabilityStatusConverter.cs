@@ -4,7 +4,7 @@ using Avalonia.Media;
 using Gommon;
 using Color = System.Drawing.Color;
 
-namespace RyuBot.UI.Converters;
+namespace Bot.UI.Converters;
 
 public class PlayabilityStatusConverter : IValueConverter
 {

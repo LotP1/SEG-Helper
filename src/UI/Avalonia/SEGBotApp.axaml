@@ -1,12 +1,12 @@
 ﻿<Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:sty="using:FluentAvalonia.Styling"
-             x:Class="RyuBot.UI.Avalonia.RyujinxBotApp">
+             x:Class="Bot.UI.Avalonia.SEGBotApp">
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary>
-                    <FontFamily x:Key="JetBrainsMono">avares://RyuBot.UI/Assets/Fonts/#JetBrains Mono</FontFamily>
+                    <FontFamily x:Key="JetBrainsMono">avares://SEGBot.UI/Assets/Fonts/#JetBrains Mono</FontFamily>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
             <ResourceDictionary.ThemeDictionaries>

@@ -1,14 +1,13 @@
 ﻿using System.Net.Http.Json;
 
 
-namespace RyuBot.Services;
+namespace Bot.Services;
 
 public class VerifierService : BotService
 {
-    public const ulong VerifiedClubChannelId = 1337187108002992140;
-    public const ulong ModLogChannelId = 1318250869980004394;
-    public const ulong VerifierErrorNotificationRoleId = 1337959521833713715;
-    public const ulong VerifiedSwitchOwnerRoleId = 1334992661198930001;
+    public const ulong VerifiedClubChannelId = 1344396771253555304;
+    public const ulong ModLogChannelId = 1473743128430121104;
+    public const ulong VerifiedSwitchOwnerRoleId = 1473818730739011654;
 
     public const string ApiBaseUrl = "https://switch.lotp.it/verifier.php";
 
@@ -99,7 +98,7 @@ public class VerifierService : BotService
     {
         if (await _client.GetChannelAsync(ModLogChannelId) is not ITextChannel channel) return;
 
-        await channel.SendMessageAsync($"<@&{VerifierErrorNotificationRoleId}>", embed: embed().Build());
+        await channel.SendMessageAsync(embed: embed().Build());
 
         return;
 

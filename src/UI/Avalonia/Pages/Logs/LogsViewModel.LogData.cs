@@ -1,12 +1,12 @@
 ﻿using System.Text;
+using Bot.Entities;
+using Bot.Helpers;
 using Discord;
 using Gommon;
-using RyuBot.Entities;
-using RyuBot.Helpers;
 
 // ReSharper disable MemberCanBePrivate.Global
 
-namespace RyuBot.UI.Avalonia.Pages;
+namespace Bot.UI.Avalonia.Pages;
 
 public record struct LogModel
 {

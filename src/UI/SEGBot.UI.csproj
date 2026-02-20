@@ -5,8 +5,8 @@
         <LangVersion>latest</LangVersion>
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
-        <RootNamespace>RyuBot.UI</RootNamespace>
-        <ApplicationIcon>../Bot/Resources/RyujinxBot.ico</ApplicationIcon>
+        <RootNamespace>SEGBot.UI</RootNamespace>
+        <ApplicationIcon>../Bot/Resources/SEGBot.ico</ApplicationIcon>
     </PropertyGroup>
     <ItemGroup>
         <PackageReference Condition="'$(Configuration)' == 'Debug'" Include="Avalonia.Diagnostics" Version="11.1.2" />
@@ -20,17 +20,15 @@
         <PackageReference Include="OneOf" Version="3.0.271" />
         <PackageReference Include="Projektanker.Icons.Avalonia" Version="9.4.0" />
         <PackageReference Include="Projektanker.Icons.Avalonia.FontAwesome" Version="9.4.0"/>
-        <PackageReference Include="Ryujinx.Systems.Update.Common" Version="1.0.44" />
-        <PackageReference Include="Ryujinx.UpdateClient" Version="1.0.44" />
         
-        <ProjectReference Include="..\Bot\RyuBot.csproj" />
+        <ProjectReference Include="..\Bot\SEGBot.csproj" />
     </ItemGroup>
     <ItemGroup>
-        <AvaloniaResource Include="../Bot/Resources/RyujinxBot.ico" Link="Assets\icon.ico" />
+        <AvaloniaResource Include="../Bot/Resources/SEGBot.ico" Link="Assets\icon.ico" />
         <AvaloniaResource Include="Assets/**" />
     </ItemGroup>
     <ItemGroup>
-      <Compile Update="Avalonia\RyujinxBotApp.axaml.cs">
+      <Compile Update="Avalonia\SEGBotApp.axaml.cs">
         <DependentUpon>App.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
@@ -42,5 +40,8 @@
         <DependentUpon>UIShellView.axaml</DependentUpon>
         <SubType>Code</SubType>
       </Compile>
+    </ItemGroup>
+    <ItemGroup>
+      <UpToDateCheckInput Remove="Avalonia\Pages\Compatibility\CompatibilityView.axaml" />
     </ItemGroup>
 </Project>

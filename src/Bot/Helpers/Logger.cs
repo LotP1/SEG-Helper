@@ -1,10 +1,10 @@
 using System.IO;
 using System.Runtime.CompilerServices;
-using RyuBot.Entities;
+using Bot.Entities;
 
 // ReSharper disable MemberCanBePrivate.Global
 
-namespace RyuBot.Helpers;
+namespace Bot.Helpers;
 
 public static partial class Logger
 {
@@ -24,16 +24,7 @@ public static partial class Logger
         LogEventHandler.Call(eventArgs);
     }
 
-    public static bool IsDebugLoggingEnabled
-    {
-        get
-        {
-            if (Version.IsDevelopment && !Config.DebugEnabled)
-                return false;
-
-            return Version.IsDevelopment || Config.DebugEnabled;
-        }
-    }
+    public static bool IsDebugLoggingEnabled => Config.DebugEnabled;
 
     #region Logger methods with invocation info
 

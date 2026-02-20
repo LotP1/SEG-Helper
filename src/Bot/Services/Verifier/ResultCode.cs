@@ -1,4 +1,4 @@
-﻿namespace RyuBot.Services;
+﻿namespace Bot.Services;
 
 public enum ResultCode : sbyte
 {

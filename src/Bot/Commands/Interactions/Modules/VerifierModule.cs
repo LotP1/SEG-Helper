@@ -1,9 +1,10 @@
-﻿using RyuBot.Interactions;
+﻿using Bot.Interactions;
+using Bot.Services;
 
-namespace RyuBot.Commands.Interactions.Modules;
+namespace Bot.Commands.Interactions.Modules;
 
-[RequireRyubingGuildPrecondition]
-public partial class VerifierModule : RyujinxBotSlashCommandModule
+[RequireSEGGuildPrecondition]
+public partial class CommandModule : SEGBotSlashCommandModule
 {
     public VerifierService Verifier { get; set; }
 }

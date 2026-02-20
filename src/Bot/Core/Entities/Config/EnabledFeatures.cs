@@ -1,6 +1,6 @@
 using System.Text.Json.Serialization;
 
-namespace RyuBot.Entities;
+namespace Bot.Entities;
 
 /// <summary>
 ///     Model that represents enabled/disabled features as defined in your config.

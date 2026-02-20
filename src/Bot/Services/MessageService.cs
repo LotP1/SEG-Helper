@@ -1,7 +1,8 @@
-﻿using Qmmands;
-using RyuBot.Commands.Text;
+﻿using Bot.Commands.Text;
+using Bot.Entities;
+using Qmmands;
 
-namespace RyuBot.Services;
+namespace Bot.Services;
 
 public sealed class MessageService : BotService
 {

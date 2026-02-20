@@ -1,6 +1,6 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace RyuBot.UI.Avalonia.Pages;
+namespace Bot.UI.Avalonia.Pages;
 
 // ReSharper disable once InconsistentNaming
 public partial class UIShellViewModel : ObservableObject
@@ -11,14 +11,14 @@ public partial class UIShellViewModel : ObservableObject
 
     public UIShellViewModel()
     {
-        RyujinxBot.Client.Connected += ChangeConnectionState;
-        RyujinxBot.Client.Disconnected += Disconnected;
+        SEGBot.Client.Connected += ChangeConnectionState;
+        SEGBot.Client.Disconnected += Disconnected;
     }
 
     ~UIShellViewModel()
     {
-        RyujinxBot.Client.Connected -= ChangeConnectionState;
-        RyujinxBot.Client.Disconnected -= Disconnected;
+        SEGBot.Client.Connected -= ChangeConnectionState;
+        SEGBot.Client.Disconnected -= Disconnected;
     }
 
     private Task ChangeConnectionState()
@@ -29,7 +29,7 @@ public partial class UIShellViewModel : ObservableObject
     
     private Task Disconnected(Exception e)
     {
-        RyujinxBotApp.NotifyError(e);
+        SEGBotApp.NotifyError(e);
         return ChangeConnectionState();
     }
 }

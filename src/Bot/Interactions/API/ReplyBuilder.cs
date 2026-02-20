@@ -1,7 +1,7 @@
 ﻿using Discord.Interactions;
 // ReSharper disable MemberCanBePrivate.Global
 
-namespace RyuBot.Interactions;
+namespace Bot.Interactions;
 
 /// <summary>
 ///     Acts as a mechanism to easily construct responses to Discord Interactions.<br/><br/>
@@ -10,7 +10,7 @@ namespace RyuBot.Interactions;
 ///     <br/><br/>
 ///     In combination with the command results system, this also has smart deferral;
 ///     that is, if you defer in a command (using the Module's
-///     <see cref="RyujinxBotModuleBase{TInteraction}.DeferAsync"/> implementation),
+///     <see cref="SEGBotModuleBase{TInteraction}.DeferAsync"/> implementation),
 ///     the ReplyBuilder will know to modify the original response instead of
 ///     trying to make a new response.<br/>
 ///

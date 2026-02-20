@@ -1,20 +1,20 @@
-﻿using Discord.Interactions;
-using RyuBot.Entities;
-using RyuBot.Helpers;
-using RyuBot.Interactions.Results;
-using RyuBot.Services;
+﻿using Bot.Entities;
+using Bot.Helpers;
+using Bot.Interactions.Results;
+using Bot.Services;
+using Discord.Interactions;
 using IResult = Discord.Interactions.IResult;
 
-namespace RyuBot.Interactions;
+namespace Bot.Interactions;
 
-public class RyujinxBotInteractionService : BotService
+public class SEGBotInteractionService : BotService
 {
     private static bool _commandsRegistered;
     
     private readonly IServiceProvider _provider;
     private readonly InteractionService _backing;
 
-    public RyujinxBotInteractionService(IServiceProvider provider, DiscordSocketClient client)
+    public SEGBotInteractionService(IServiceProvider provider, DiscordSocketClient client)
     {
         _provider = provider;
         _backing = new(client.Rest, new()
