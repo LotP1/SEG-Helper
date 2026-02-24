@@ -31,7 +31,7 @@ public static class Config
         if (!FilePath.Data.ExistsAsDirectory)
         {
             Error(LogSource.Bot,
-                $"The \"{FilePath.Data}\" directory didn't exist, so I created it for you. Please fill in the configuration!");
+                $"The \"{FilePath.Data.FullPath}\" directory didn't exist, so I created it for you. Please fill in the configuration!");
             FilePath.Data.Create();
             //99.9999999999% of the time the config also won't exist if this block is reached
             //if the config does exist when this block is reached, feel free to become the lead developer of this project
@@ -39,7 +39,7 @@ public static class Config
 
         if (CreateIfAbsent<TConfig>()) return true;
         Error(LogSource.Bot,
-            $"Please fill in the configuration located at \"{Path}\"; restart me when you've done so.");
+            $"Please fill in the configuration located at \"{Path.FullPath}\"; restart me when you've done so.");
         return false;
 
     }
